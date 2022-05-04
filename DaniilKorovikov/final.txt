@@ -1,0 +1,15 @@
+Session 3
+
+1. Create a local folder and initialize it for git; mkdir hw_3 cd hw_3 git init
+2. Create a text file in the folder and commit it;  touch text.txt git add text.txt  git commit -m 'Add text.txt'
+3. Create a remote repository on GitHub; git remote add origin git@github.com:daniilkorovikov/hw_3.git
+4. Push the local repository to GitHub; git push origin master
+5. Create a new branch (develop) and switch to it;
+	git checkout -b develop 	git push origin develop
+6. Create a new branch from 'develop' and switch to it; git checkout -b feature/1
+7. Add the first line in the text file, commit, and push to remote; vim text.txt  # First line
+	git add text.txt 	git commit -m 'Write first line' 	git push origin feature/1 8. Clone your repository from GitHub into a separate folder; 	cd .. 	mkdir hw_3_clone 	cd hw_3_clone 	git clone git@github.com:daniilkorovikov/hw_3.git 	cd hw_3 9. Create another branch from 'develop' and switch to it using cloned project; 	 git checkout develop 	git checkout -b 'feature_2'
+10. Add the first line of the text file (different from the first branch), commit, and push on remote; vim text.txt # Another line  git add text.txt git commit -m  ‘Add line 'Another line’ git push origin feature_2
+11. Switch to develop;
+	git checkout develop
+12 Merge the first branch and push changes; 	git merge feature/1 13. Merge the second branch and push changes; 	git merge feature_2 14. Resolve conflict; 	vim text.txt 		<<<<<<HEAD 		First line 		—————— 		Another line 		>>>>>>> feature_2 		 		First line 		Another line 15. Commit and push a separate text file with a list of all the commands, which were used to solve the problem; 	git add text.txt  	git commit -m 'Resolve conflict' 	git push origin develop 	
